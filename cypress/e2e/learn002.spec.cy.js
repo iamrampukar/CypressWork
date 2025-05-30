@@ -1,5 +1,5 @@
 /// <reference types="cypress"/>
-describe('Describe Learn 001', () => {
+describe('Describe Learn 002', () => {
     beforeEach(() => {
         cy.visit('https://example.cypress.io/commands/actions');
     });
