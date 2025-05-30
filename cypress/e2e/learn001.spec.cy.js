@@ -43,5 +43,16 @@ describe('Describe Learn 001', () => {
                 cy.get('a').should('exist')
             })
     })
+    it('2000s then', () => {
+        cy.get('#email1').type('interfacemiralce@gmail.com')
+        cy.wait(2000).then(() => {
+            console.log('2000s is finished');
+            fetch('https://api.spacexdata.com/v3/missions')
+                .then((resp) => resp.json())
+                .then((resp_data) => {
+                    console.log(resp_data)
+                })
+        })
+    })
 
 });
