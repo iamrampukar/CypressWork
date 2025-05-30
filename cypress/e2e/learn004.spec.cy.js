@@ -21,6 +21,15 @@ describe('Describe Learn 004', () => {
     beforeEach(() => {
         cy.visit('https://example.cypress.io');
     })
+
+    afterEach(() => {
+        cy.log('After each hook is here');
+    })
+
+    after(() => {
+        cy.log('the final after hook runs once');
+    })
+
     it('beforeEach visit the home page', () => {
         // cy.visit('https://example.cypress.io');
         cy.get('h1').should('exist');
