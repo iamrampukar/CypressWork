@@ -1,4 +1,10 @@
 /// <reference types="cypress"/>
+/*
+-- before
+-- beforeach
+-- after
+-- afterEach
+*/
 describe('Describe Learn 004', () => {
     before(() => {
         cy.request('https://api.spacexdata.com/v3/missions').its('body').should('have.length', 10);
