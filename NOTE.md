@@ -39,8 +39,28 @@
         .should('not.have.class', 'active')
         .find('a')
         .should('have.attr', 'href', '/commands/querying');
-        
-# Assertions
+-- it('Should not have an active class on inactive page', () => {
+        cy.visit('https://example.cypress.io');
+        cy.findAllByText('Actions').first().click({ force: true })
+        cy.url().should('include', 'commands/actions')
+    })
+-- it('Build Fx', () => {
+        cy.visit('https://example.cypress.io');
+        cy.findAllByText('Actions').first().click({ force: true })
+        cy.url().should('include', 'commands/actions')
+        cy.findByPlaceholderText('Email').type('Test').should('have.value', 'Test')
+        cy.findByLabelText('Describe:').type('Your Description')
+            .should('have.value', 'Your Description')
+            .clear().should('have.value', '')
+        // cy.get('.action-checkboxes [type="checkbox"]').first().check().should('be.checked')
+        cy.get('.action-checkboxes [type="checkbox"]').eq(1).check({ force: true }).should('be.checked')
+    })
+
+# Cypress Hooks
+-- before: run one time before all tests start
+-- beforeEach: runs before each individual test
+-- after: run one time after all tests are finished.
+-- afterEach: runs after each individaual test.
 
 # cypress-testing-library
 -- https://github.com/testing-library/cypress-testing-library
