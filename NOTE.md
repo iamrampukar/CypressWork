@@ -56,6 +56,8 @@
         cy.get('.action-checkboxes [type="checkbox"]').eq(1).check({ force: true }).should('be.checked')
     })
 
+-- cy.get('.....').contains('This username already exist');
+
 # Cypress Hooks
 -- before: run one time before all tests start
 -- beforeEach: runs before each individual test
